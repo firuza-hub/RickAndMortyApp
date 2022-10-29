@@ -80,7 +80,6 @@
         android:id="@+id/tvPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnNext"
         app:layout_constraintStart_toEndOf="@+id/btnPrev"
