@@ -10,7 +10,11 @@ import com.example.rickandmortybyfsa.data.remote.models.CharacterList
 import com.example.rickandmortybyfsa.data.remote.retrofit
 import kotlinx.coroutines.launch
 
-class CharactersListViewModel(app: Application) : AndroidViewModel(app) {
+class CharactersListViewModel(val app: Application) : AndroidViewModel(app) {
+
+    var currentPage = 1
+
+
     private val retrofitService: CharactersApiService by lazy {
         retrofit.create(CharactersApiService::class.java)
     }
@@ -20,12 +24,17 @@ class CharactersListViewModel(app: Application) : AndroidViewModel(app) {
 
     var characterList = MutableLiveData<CharacterList>()
 
-    init {
-        viewModelScope.launch {
+    fun hasNextPage(): Boolean { return currentPage < (characterList.value?.info?.pages ?: 0)}
+    fun hasPrevPage(): Boolean { return currentPage > 1}
 
+    init {
+        loadData()
+    }
+    fun loadData(){
+        viewModelScope.launch {
             _status.value = CharacterApiStatus.LOADING
             try {
-                characterList.value = retrofitService.getAsync().await()
+                characterList.value = retrofitService.getAsync(currentPage).await()
                 _status.value = CharacterApiStatus.DONE
             }
             catch (ex: Exception){
@@ -35,6 +44,7 @@ class CharactersListViewModel(app: Application) : AndroidViewModel(app) {
             }
         }
     }
+
     class Factory(val app: Application) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(CharactersListViewModel::class.java)) {

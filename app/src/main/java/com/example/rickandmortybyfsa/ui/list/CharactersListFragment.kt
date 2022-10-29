@@ -17,7 +17,10 @@ import com.example.rickandmortybyfsa.databinding.FragmentCharactersListBinding
 class CharactersListFragment : Fragment() {
 
     private val viewModel: CharactersListViewModel by lazy {
-        ViewModelProvider(this, CharactersListViewModel.Factory(requireActivity().application))[CharactersListViewModel::class.java]
+        ViewModelProvider(
+            this,
+            CharactersListViewModel.Factory(requireActivity().application)
+        )[CharactersListViewModel::class.java]
     }
     private lateinit var adapter: CharacterListItemAdapter
     private lateinit var binding: FragmentCharactersListBinding
@@ -25,23 +28,42 @@ class CharactersListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_characters_list, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_characters_list, container, false)
 
         adapter = CharacterListItemAdapter()
         binding.rvCharacters.adapter = adapter
 
+        binding.btnNext.setOnClickListener {
+            if (viewModel.hasNextPage()) {
+                viewModel.currentPage++
+                viewModel.loadData()
+            }
+        }
+        binding.btnPrev.setOnClickListener {
+            if (viewModel.hasPrevPage()) {
+                viewModel.currentPage--
+                viewModel.loadData()
+            }
+        }
+
         return binding.root
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.characterList.observe(requireActivity(), Observer {
+        viewModel.characterList.observe(requireActivity()) {
             adapter.setData(it.results)
-            binding.tvPage.text = it.info.count.toString()
-        })
+
+            binding.btnNext.isClickable = viewModel.hasNextPage()
+            binding.btnPrev.isClickable = viewModel.hasPrevPage()
+            binding.tvPage.text = "${viewModel.currentPage} of ${it.info.pages}"
+        }
         viewModel.status.observe(requireActivity(), Observer {
-            if(it == CharacterApiStatus.LOADING) binding.pbListLoader.visibility =  View.VISIBLE
-            else   binding.pbListLoader.visibility = View.INVISIBLE
+            if (it == CharacterApiStatus.LOADING) binding.pbListLoader.visibility = View.VISIBLE
+            else binding.pbListLoader.visibility = View.INVISIBLE
         })
     }
 

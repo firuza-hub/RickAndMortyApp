@@ -17,7 +17,7 @@ import retrofit2.http.Query
 
 interface CharactersApiService {
     @GET(API_URL_CHARACTERS)
-    fun getAsync(): Deferred<CharacterList>
+    fun getAsync(@Query("page") currentPage:Int): Deferred<CharacterList>
 
     @GET(API_URL_CHARACTERS)
     suspend fun getByIdAsync(@Query("id") id: Int):  Deferred<CharacterDetails>
