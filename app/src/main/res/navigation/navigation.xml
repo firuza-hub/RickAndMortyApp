@@ -23,7 +23,7 @@
             android:id="@+id/action_detailFragment_to_listFragment"
             app:destination="@id/listFragment" />
         <argument
-            android:name="id"
-            app:argType="integer" />
+            android:name="data"
+            app:argType="com.example.rickandmortybyfsa.data.remote.models.CharacterDetails" />
     </fragment>
 </navigation>

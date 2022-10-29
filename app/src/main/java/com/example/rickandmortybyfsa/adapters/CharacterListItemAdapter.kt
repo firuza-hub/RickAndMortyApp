@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortybyfsa.data.remote.models.CharacterDetails
 import com.example.rickandmortybyfsa.databinding.CharacterListItemBinding
 
-class CharacterListItemAdapter: RecyclerView.Adapter<CharacterListItemAdapter.CharacterListItemViewHolder>() {
+class CharacterListItemAdapter(val navigateToDetailsView:(id:CharacterDetails) -> Unit) : RecyclerView.Adapter<CharacterListItemAdapter.CharacterListItemViewHolder>() {
 
     private var data = listOf<CharacterDetails>()
 
@@ -23,6 +23,7 @@ class CharacterListItemAdapter: RecyclerView.Adapter<CharacterListItemAdapter.Ch
     override fun onBindViewHolder(holder: CharacterListItemViewHolder, position: Int) {
         val currentItem = data[position]
         holder.binding.character = currentItem
+        holder.binding.root.setOnClickListener { navigateToDetailsView(currentItem) }
     }
 
     override fun getItemCount(): Int {

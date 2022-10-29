@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.Navigation
 import com.example.rickandmortybyfsa.R
 import com.example.rickandmortybyfsa.adapters.CharacterListItemAdapter
 import com.example.rickandmortybyfsa.data.remote.CharacterApiStatus
+import com.example.rickandmortybyfsa.data.remote.models.CharacterDetails
 import com.example.rickandmortybyfsa.databinding.FragmentCharactersListBinding
 
 class CharactersListFragment : Fragment() {
@@ -24,6 +25,7 @@ class CharactersListFragment : Fragment() {
     }
     private lateinit var adapter: CharacterListItemAdapter
     private lateinit var binding: FragmentCharactersListBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +33,7 @@ class CharactersListFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_characters_list, container, false)
 
-        adapter = CharacterListItemAdapter()
+        adapter = CharacterListItemAdapter{navigateToDetailsView(it)}
         binding.rvCharacters.adapter = adapter
 
         binding.btnNext.setOnClickListener {
@@ -50,6 +52,9 @@ class CharactersListFragment : Fragment() {
         return binding.root
     }
 
+    private fun navigateToDetailsView(data: CharacterDetails) {
+        Navigation.findNavController(binding.root).navigate(CharactersListFragmentDirections.actionListFragmentToDetailFragment(data))
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
