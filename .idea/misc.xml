@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.206" />
+        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/drawable/ic_next.xml" value="0.206" />
+        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/drawable/ic_prev.xml" value="0.206" />
         <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/character_list_item.xml" value="0.4" />
+        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/fragment_characters_list.xml" value="0.4" />
         <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/fragment_list.xml" value="0.22395833333333334" />
       </map>
     </option>
