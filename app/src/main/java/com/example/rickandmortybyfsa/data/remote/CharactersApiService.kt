@@ -20,6 +20,12 @@ interface CharactersApiService {
     fun getAsync(@Query("page") currentPage:Int): Deferred<CharacterList>
 
     @GET(API_URL_CHARACTERS)
+    fun getByNameAsync(@Query("name") keyword:String): Deferred<CharacterList>
+
+    @GET(API_URL_CHARACTERS)
+    fun getFilteredAsync(@Query("name") name:String, @Query("status")status:String): Deferred<CharacterList>
+
+    @GET(API_URL_CHARACTERS)
     suspend fun getByIdAsync(@Query("id") id: Int):  Deferred<CharacterDetails>
 }
 
