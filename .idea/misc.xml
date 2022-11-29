@@ -8,13 +8,12 @@
         <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/drawable/ic_prev.xml" value="0.206" />
         <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/character_list_item.xml" value="0.4" />
-        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/fragment_characters_list.xml" value="0.2" />
-        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/fragment_detail.xml" value="0.72" />
+        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/fragment_characters_list.xml" value="0.4" />
         <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/layout/fragment_list.xml" value="0.22395833333333334" />
-        <entry key="..\:/Users/Firuza/AndroidStudioProjects/RickAndMortyByFSA/app/src/main/res/menu/menu.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/Firuza/StudioProjects/RickAndMortyApp/app/src/main/res/layout/character_list_item.xml" value="0.4" />
         <entry key="..\:/Users/Firuza/StudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_characters_list.xml" value="0.2351851851851852" />
-        <entry key="..\:/Users/Firuza/StudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_detail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Firuza/StudioProjects/RickAndMortyApp/app/src/main/res/layout/fragment_detail.xml" value="0.264" />
+        <entry key="..\:/Users/Firuza/StudioProjects/RickAndMortyApp/app/src/main/res/menu/menu.xml" value="0.1" />
       </map>
     </option>
   </component>
