@@ -91,32 +91,32 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Gender"
-                        android:text="@{`Gender: ` + character.gender}" />
+                        android:hint="@string/gender"
+                        android:text="@{@string/gender_placeholder(character.gender)}" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Status"
-                        android:text="@{`Status: ` + character.status}" />
+                        android:hint="@string/status"
+                        android:text="@{@string/status_placeholder(character.status)}"  />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Species"
-                        android:text="@{`Species: ` +character.species}" />
+                        android:hint="@string/species"
+                        android:text="@{@string/species_placeholder(character.species)}" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Location"
-                        android:text="@{`Location: ` +character.location.name}" />
+                        android:hint="@string/location"
+                        android:text="@{@string/location_placeholder(character.location.name)}" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Origin"
-                        android:text="@{`Origin: ` +character.origin.name}" />
+                        android:hint="@string/origin"
+                        android:text="@{@string/origin_placeholder(character.origin.name)}" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

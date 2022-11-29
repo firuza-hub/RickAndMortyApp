@@ -5,4 +5,16 @@
     <string name="name">Name</string>
     <string name="rick_and_morty_characters">Rick and Morty Characters</string>
     <string name="character_avatar">Character avatar</string>
+    <string name="gender">Gender</string>
+    <string name="status">Status</string>
+    <string name="species">Species</string>
+    <string name="location">Location</string>
+    <string name="origin">Origin</string>
+
+
+    <string name="gender_placeholder">Gender: %1$s</string>
+    <string name="location_placeholder">Location: %1$s</string>
+    <string name="status_placeholder">Status: %1$s</string>
+    <string name="species_placeholder">Species: %1$s</string>
+    <string name="origin_placeholder">Origin: %1$s</string>
 </resources>
